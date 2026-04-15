@@ -60,7 +60,7 @@ El valor por defecto es 7 minutos, calculado como un punto medio entre los dos t
 Vídeos normales — la duración media es de 11.7 minutos según Statista
 Shorts — la duración media es de 20 a 40 segundos
 
-Dado que la mayoría de usuarios mezcla ambos formatos, 7 minutos es una estimación razonable para el usuario medio. Aun así, puedes ajustarlo en la consola según tu consumo real:
+Dado que la mayoría de usuarios mezcla ambos formatos, 7 minutos es una estimación razonable para el usuario medio. 
 
 ---
 
