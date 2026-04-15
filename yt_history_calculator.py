@@ -71,14 +71,14 @@ def calcular_horas_youtube(archivo_html, minutos_promedio_por_video):
     minutos = resto % 60
 
     print("\n" + "═" * 44)
-    print("   📊 RESULTADOS DE TU HISTORIAL DE YOUTUBE")
+    print("   RESULTADOS DE TU HISTORIAL DE YOUTUBE")
     print("═" * 44)
-    print(f"   🎬 Vídeos en el historial : {total_videos:>10,}")
-    print(f"   ⏱  Promedio por vídeo     : {minutos_promedio_por_video:>9.0f} min")
+    print(f"   Vídeos en el historial : {total_videos:>10,}")
+    print(f"   Promedio por vídeo     : {minutos_promedio_por_video:>9.0f} min")
     print("─" * 44)
-    print(f"   🕐 Total de horas         : {total_horas:>9,.0f} h")
-    print(f"   📅 Equivalente en días    : {total_dias:>9,.1f} días")
-    print(f"   ⏳ Tiempo exacto          : {dias} días, {horas} h y {minutos} min")
+    print(f"   Total de horas         : {total_horas:>9,.0f} h")
+    print(f"   Equivalente en días    : {total_dias:>9,.1f} días")
+    print(f"   Tiempo exacto          : {dias} días, {horas} h y {minutos} min")
     print("═" * 44)
     print()
 
