@@ -22,30 +22,16 @@ INSTRUCCIONES = """
 def pedir_ruta_archivo():
     print(INSTRUCCIONES)
     while True:
-        ruta = input("Pega aquí la ruta completa al archivo HTML: ").strip().strip('"').strip("'")
+        ruta = input("  Pega aquí la ruta completa al archivo HTML: ").strip().strip('"').strip("'")
         if os.path.isfile(ruta):
             return ruta
-        print(f"\nNo se encontró el archivo en: '{ruta}'")
+        print(f"\n  No se encontró el archivo en: '{ruta}'")
         print("   Asegúrate de que la ruta es correcta e inténtalo de nuevo.\n")
 
-def pedir_minutos_promedio():
-    print("\n⏱  ¿Cuántos minutos dura el video promedio que ves?")
-    print("   (Ejemplos: tutoriales largos → 20 min, shorts/clips → 5 min)")
-    print("   Pulsa Enter para usar el valor por defecto [12 min]: ", end="")
-    while True:
-        entrada = input().strip()
-        if entrada == "":
-            return 12
-        try:
-            valor = float(entrada)
-            if valor > 0:
-                return valor
-            print("   ❌ El valor debe ser mayor que 0. Inténtalo de nuevo: ", end="")
-        except ValueError:
-            print("   ❌ Introduce un número válido (por ejemplo: 10 o 15.5): ", end="")
+MINUTOS_PROMEDIO = 7
 
-def calcular_horas_youtube(archivo_html, minutos_promedio_por_video):
-    print("\n⏳ Leyendo el archivo, esto puede tardar unos segundos...")
+def calcular_horas_youtube(archivo_html):
+    print("\n  Leyendo el archivo, esto puede tardar unos segundos...")
     try:
         with open(archivo_html, "r", encoding="utf-8") as f:
             contenido = f.read()
@@ -61,7 +47,7 @@ def calcular_horas_youtube(archivo_html, minutos_promedio_por_video):
         print("   El archivo debe llamarse 'historial-de-reproducciones.html'")
         return
 
-    total_minutos = total_videos * minutos_promedio_por_video
+    total_minutos = total_videos * MINUTOS_PROMEDIO
     total_horas = total_minutos / 60
     total_dias = total_horas / 24
 
@@ -74,7 +60,6 @@ def calcular_horas_youtube(archivo_html, minutos_promedio_por_video):
     print("   RESULTADOS DE TU HISTORIAL DE YOUTUBE")
     print("═" * 44)
     print(f"   Vídeos en el historial : {total_videos:>10,}")
-    print(f"   Promedio por vídeo     : {minutos_promedio_por_video:>9.0f} min")
     print("─" * 44)
     print(f"   Total de horas         : {total_horas:>9,.0f} h")
     print(f"   Equivalente en días    : {total_dias:>9,.1f} días")
@@ -86,10 +71,9 @@ def main():
     print(BANNER)
     try:
         archivo = pedir_ruta_archivo()
-        minutos = pedir_minutos_promedio()
-        calcular_horas_youtube(archivo, minutos)
+        calcular_horas_youtube(archivo)
     except KeyboardInterrupt:
-        print("\n\nCancelado por el usuario.")
+        print("\n\n  Cancelado por el usuario.")
         sys.exit(0)
 
 if __name__ == "__main__":
