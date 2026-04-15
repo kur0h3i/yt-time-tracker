@@ -53,15 +53,14 @@ Takeout/YouTube y YouTube Music/historial/historial-de-reproducciones.html
 
 ---
 
-## Nota sobre la precisión
+##  Nota sobre la precisión
+El cálculo es una estimación. El archivo de historial de Google no incluye la duración real de cada vídeo, por lo que se multiplica el número de entradas por una duración promedio configurable.
+El valor por defecto es 7 minutos, calculado como un punto medio entre los dos tipos de contenido más consumidos en YouTube:
 
-El cálculo es una **estimación**. El archivo de historial de Google no incluye la duración real de cada vídeo, por lo que se multiplica el número de entradas por una duración promedio configurable. El resultado puede variar si:
+Vídeos normales — la duración media es de 11.7 minutos según Statista
+Shorts — la duración media es de 20 a 40 segundos
 
-- Tienes muchos Shorts (duración ~1 min)
-- Ves principalmente vídeos largos (>30 min)
-- Pausaste y reanudaste el mismo vídeo varias veces
-
-Ajusta el promedio en la consola para obtener un resultado más cercano a tu consumo real.
+Dado que la mayoría de usuarios mezcla ambos formatos, 7 minutos es una estimación razonable para el usuario medio. Aun así, puedes ajustarlo en la consola según tu consumo real:
 
 ---
 
